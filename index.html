@@ -20,25 +20,21 @@
       text-align: center;
       width: 50%;
       flex-wrap: wrap;
+    }
 
-      background: rgba(255, 255, 255, 0);
-      border-radius: 16px;
-      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-      backdrop-filter: blur(7.7px);
-      -webkit-backdrop-filter: blur(7.7px);
+    @media screen and (min-width: 800px) {
+      .option-box {
+        background: rgba(255, 255, 255, 0);
+        border-radius: 16px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(7.7px);
+        -webkit-backdrop-filter: blur(7.7px);
+      }
     }
 
     @media screen and (max-width: 600px) {
       .option-box {
         width: 80%;
-
-
-        /* From https://css.glass */
-        background: rgba(255, 255, 255, 0.29);
-        border-radius: 16px;
-        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-        backdrop-filter: blur(19.3px);
-        -webkit-backdrop-filter: blur(19.3px);
       }
     }
 
@@ -208,51 +204,51 @@
     });
   </script> -->
 
-   <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        const audio = document.getElementById("background-audio");
-        const constantVolume = 0.2;
-        let isMouseMoving = false;
-        let volumeTimeout;
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const audio = document.getElementById("background-audio");
+      const constantVolume = 0.2;
+      let isMouseMoving = false;
+      let volumeTimeout;
 
-        // Function to set the volume to the maximum level
-        function setMaxVolume() {
-            audio.volume = 1.0;
-        }
+      // Function to set the volume to the maximum level
+      function setMaxVolume() {
+        audio.volume = 1.0;
+      }
 
-        // Function to set the volume back to the constant level
-        function setConstantVolume() {
-            audio.volume = constantVolume;
-        }
-
-        // Function to start sound and set volume
-        function startSound() {
-            setMaxVolume();
-            audio.play();
-            document.removeEventListener("click", startSound); // Remove the click event listener after starting sound
-        }
-
-        // Add a click event listener to the entire document to start sound
-        document.addEventListener("click", startSound);
-
-        // Update the audio volume when the mouse moves
-        document.addEventListener("mousemove", function() {
-            if (!isMouseMoving) {
-                isMouseMoving = true;
-                setMaxVolume();
-            }
-
-            clearTimeout(volumeTimeout);
-            volumeTimeout = setTimeout(function() {
-                isMouseMoving = false;
-                setConstantVolume();
-            }, 1000); // Adjust the delay in milliseconds as needed
-        });
-
-        // Set the initial volume to the constant level
+      // Function to set the volume back to the constant level
+      function setConstantVolume() {
         audio.volume = constantVolume;
+      }
+
+      // Function to start sound and set volume
+      function startSound() {
+        setMaxVolume();
+        audio.play();
+        document.removeEventListener("click", startSound); // Remove the click event listener after starting sound
+      }
+
+      // Add a click event listener to the entire document to start sound
+      document.addEventListener("click", startSound);
+
+      // Update the audio volume when the mouse moves
+      document.addEventListener("mousemove", function () {
+        if (!isMouseMoving) {
+          isMouseMoving = true;
+          setMaxVolume();
+        }
+
+        clearTimeout(volumeTimeout);
+        volumeTimeout = setTimeout(function () {
+          isMouseMoving = false;
+          setConstantVolume();
+        }, 1000); // Adjust the delay in milliseconds as needed
+      });
+
+      // Set the initial volume to the constant level
+      audio.volume = constantVolume;
     });
-</script> 
+  </script>
 </body>
 
 </html>
