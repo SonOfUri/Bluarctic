@@ -30,7 +30,7 @@
 
     @media screen and (max-width: 600px) {
       .option-box {
-        width: 80%;
+        width: 60%;
 
 
         /* From https://css.glass */
@@ -65,6 +65,11 @@
       margin: 40px auto;
     }
 
+    @media screen and (max-width: 600px) {
+    .box img{ 
+      margin: 10px auto;
+
+    }
 
 
     /* CSS */
@@ -172,7 +177,43 @@
   <script src='https://cdn.jsdelivr.net/npm/jquery.ripples@0.6.3/dist/jquery.ripples.min.js'></script>
 
   <script src="./script.js"></script>
-  <script>
+  <!-- <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const audio = document.getElementById("background-audio");
+      const constantVolume = 0;
+      let isMouseMoving = false;
+      let volumeTimeout;
+
+      // Function to set the volume to the maximum level
+      function setMaxVolume() {
+        audio.volume = 1.0;
+      }
+
+      // Function to set the volume back to the constant level
+      function setConstantVolume() {
+        audio.volume = constantVolume;
+      }
+
+      // Update the audio volume when the mouse moves
+      document.addEventListener("mousemove", function () {
+        if (!isMouseMoving) {
+          isMouseMoving = true;
+          setMaxVolume();
+        }
+
+        clearTimeout(volumeTimeout);
+        volumeTimeout = setTimeout(function () {
+          isMouseMoving = false;
+          setConstantVolume();
+        }, 1000); // Adjust the delay in milliseconds as needed
+      });
+
+      // Set the initial volume to the constant level
+      audio.volume = constantVolume;
+    });
+  </script> -->
+
+   <script>
     document.addEventListener("DOMContentLoaded", function() {
         const audio = document.getElementById("background-audio");
         const constantVolume = 0.2;
@@ -216,7 +257,7 @@
         // Set the initial volume to the constant level
         audio.volume = constantVolume;
     });
-</script>
+</script> 
 </body>
 
 </html>
