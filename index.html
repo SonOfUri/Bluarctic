@@ -36,8 +36,8 @@
       /* Ensure both boxes are equal width */
     }
 
-    .box a{
-    text-decoration: none;
+    .box a {
+      text-decoration: none;
     }
 
     .box img {
@@ -118,6 +118,11 @@
 </head>
 
 <body>
+
+  <audio id="background-audio" autoplay loop>
+    <source src="/water-river-splashing-smooth-28355.mp3" type="audio/mpeg">
+  </audio>
+
   <section style="max-height: 100%; margin: auto;">
     <div id="ripple" style="height: 70rem; 
      background: url('underwater-textures-2022-11-02-17-21-51-utc.jpg') left top / cover;">
@@ -147,7 +152,41 @@
   <script src='https://cdn.jsdelivr.net/npm/jquery.ripples@0.6.3/dist/jquery.ripples.min.js'></script>
 
   <script src="./script.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const audio = document.getElementById("background-audio");
+        const constantVolume = 0.2;
+        let isMouseMoving = false;
+        let volumeTimeout;
 
+        // Function to set the volume to the maximum level
+        function setMaxVolume() {
+            audio.volume = 1.0;
+        }
+
+        // Function to set the volume back to the constant level
+        function setConstantVolume() {
+            audio.volume = constantVolume;
+        }
+
+        // Update the audio volume when the mouse moves
+        document.addEventListener("mousemove", function() {
+            if (!isMouseMoving) {
+                isMouseMoving = true;
+                setMaxVolume();
+            }
+
+            clearTimeout(volumeTimeout);
+            volumeTimeout = setTimeout(function() {
+                isMouseMoving = false;
+                setConstantVolume();
+            }, 1000); // Adjust the delay in milliseconds as needed
+        });
+
+        // Set the initial volume to the constant level
+        audio.volume = constantVolume;
+    });
+</script>
 </body>
 
 </html>
