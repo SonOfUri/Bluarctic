@@ -139,7 +139,7 @@
 
 <body>
 
-  <audio id="background-audio" autoplay loop>
+  <audio id="background-audio"  loop>
     <source src="/water-river-splashing-smooth-28355.mp3" type="audio/mpeg">
   </audio>
 
@@ -173,40 +173,50 @@
 
   <script src="./script.js"></script>
   <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const audio = document.getElementById("background-audio");
-      const constantVolume = 0;
-      let isMouseMoving = false;
-      let volumeTimeout;
+    document.addEventListener("DOMContentLoaded", function() {
+        const audio = document.getElementById("background-audio");
+        const constantVolume = 0.2;
+        let isMouseMoving = false;
+        let volumeTimeout;
 
-      // Function to set the volume to the maximum level
-      function setMaxVolume() {
-        audio.volume = 1.0;
-      }
-
-      // Function to set the volume back to the constant level
-      function setConstantVolume() {
-        audio.volume = constantVolume;
-      }
-
-      // Update the audio volume when the mouse moves
-      document.addEventListener("mousemove", function () {
-        if (!isMouseMoving) {
-          isMouseMoving = true;
-          setMaxVolume();
+        // Function to set the volume to the maximum level
+        function setMaxVolume() {
+            audio.volume = 1.0;
         }
 
-        clearTimeout(volumeTimeout);
-        volumeTimeout = setTimeout(function () {
-          isMouseMoving = false;
-          setConstantVolume();
-        }, 1000); // Adjust the delay in milliseconds as needed
-      });
+        // Function to set the volume back to the constant level
+        function setConstantVolume() {
+            audio.volume = constantVolume;
+        }
 
-      // Set the initial volume to the constant level
-      audio.volume = constantVolume;
+        // Function to start sound and set volume
+        function startSound() {
+            setMaxVolume();
+            audio.play();
+            document.removeEventListener("click", startSound); // Remove the click event listener after starting sound
+        }
+
+        // Add a click event listener to the entire document to start sound
+        document.addEventListener("click", startSound);
+
+        // Update the audio volume when the mouse moves
+        document.addEventListener("mousemove", function() {
+            if (!isMouseMoving) {
+                isMouseMoving = true;
+                setMaxVolume();
+            }
+
+            clearTimeout(volumeTimeout);
+            volumeTimeout = setTimeout(function() {
+                isMouseMoving = false;
+                setConstantVolume();
+            }, 1000); // Adjust the delay in milliseconds as needed
+        });
+
+        // Set the initial volume to the constant level
+        audio.volume = constantVolume;
     });
-  </script>
+</script>
 </body>
 
 </html>
