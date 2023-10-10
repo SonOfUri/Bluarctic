@@ -1,5 +1,5 @@
 /*---------------------------------------------
-Template name:  mineralo
+Template name:  Bluarctic
 Version:        1.0
 Author:         layerdrops
 Author Email:   layerdrops@gmail.com
