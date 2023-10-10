@@ -340,7 +340,7 @@ body {
 
 .disabled { pointer-events: none; }
 
-.primary-bg { background-color: #f4f6fb; }
+.primary-bg { background-color: #d4f1f9; }
 .secondery-bg { background-color: #081340; }
 .blue-bg { background-color: #00c3ed; }
 .blue-bg2 { background: #0b1e70; }
@@ -406,7 +406,7 @@ select.parsley-error {
     padding: 0 10px;
     -webkit-transition: all .2s;
     transition: all .2s;
-    background: #f4f6fb;
+    background: #d4f1f9;
     border: none;
     border-bottom: 1px solid #fff;
     opacity: 1;
@@ -1131,7 +1131,7 @@ label input[type=radio] {
     /*4.1: main banner 01*/
 .banner-inner-area {
     padding: 170px 0 426px;
-    background: #f4f6fb;
+    background: #d4f1f9;
 }
 .banner-area1 .banner-text-wrap h1 {
     font-weight: 600;
@@ -1181,7 +1181,7 @@ label input[type=radio] {
 }
 .banner-inner-area.banner-area1 {
     padding: 170px 0 0;
-    background: #f4f6fb;
+    background: #d4f1f9;
     position: relative;
     z-index: 11;
 }
@@ -1682,7 +1682,7 @@ input.banner-form:nth-child(4) {
     position: absolute;
     height: 100%;
     width: 1px;
-    background: #f4f6fb;
+    background: #d4f1f9;
     top: 0;
     right: -17px;
 }
@@ -1787,7 +1787,7 @@ input.banner-form:nth-child(4) {
     position: absolute;
     width: 100%;
     height: 572px;
-    background: #f4f6fb;
+    background: #d4f1f9;
     top: 0;
     left: 0;
     z-index: -1;
@@ -1835,7 +1835,8 @@ input.banner-form:nth-child(4) {
 
 .single-bottle-inner {
     border: 1px solid #dae0ef;
-    padding: 60px 60px 50px;
+    /* padding: 60px 60px 50px; */
+    padding: 15px;
     margin-bottom: 30px;
     transition: .3s all linear;
     border-radius: 4px;
@@ -1920,7 +1921,7 @@ input.banner-form:nth-child(4) {
     margin: 0 auto;
     line-height: 130px;
     border-radius: 50%;
-    background: #f4f6fb;
+    background: #d4f1f9;
     margin-bottom: 25px;
     transition: .3s all linear;
 }
@@ -1966,7 +1967,7 @@ input.banner-form:nth-child(4) {
     height: 45px;
     width: 45px;
     display: inline-block;
-    background: #f4f6fb;
+    background: #d4f1f9;
     line-height: 45px;
     text-align: center;
     border-radius: 50%;
@@ -2619,7 +2620,7 @@ input.banner-form:nth-child(4) {
     height: 40px;
     width: 40px;
     display: inline-block;
-    background: #f4f6fb;
+    background: #d4f1f9;
     line-height: 40px;
     text-align: center;
     border-radius: 50%;
