@@ -687,10 +687,10 @@
     .banner-inner-area.banner-area1:after {
         bottom: -8%;
     }
-    .banner-inner-area.banner-area1:before,
+    /* .banner-inner-area.banner-area1:before,
     .banner-image{
         display: none;
-    }
+    } */
     .testionial-carousel2 .owl-dots {
         display: none;
     }
