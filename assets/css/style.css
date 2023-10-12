@@ -1187,13 +1187,13 @@ label input[type=radio] {
 .banner-inner-area.banner-area1 {
     padding: 170px 0 0;
     /* background-color: #081340; */
-    background-image: url(/assets/img/banner/glaciers.jpg);
+    /* background-image: url(/assets/img/banner/glaciers.jpg); */
     background-position: center;
     background-size: cover;
     position: relative;
     z-index: 11;
 }
-/* .banner-inner-area.banner-area1:before{
+.banner-inner-area.banner-area1:before{
     content: '';
     position: absolute;
     width: 100%;
@@ -1201,7 +1201,7 @@ label input[type=radio] {
     background: #fff;
     bottom: 0;
     left: 0;
-} */
+}
 .banner-inner-area.banner-area1:after{
     content: '';
     position: absolute;
