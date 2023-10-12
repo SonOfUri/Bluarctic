@@ -42,9 +42,7 @@
 </head>
 
 <body>
-    <audio id="background-audio" autoplay loop>
-        <source src="assets-index/bgs/water.mp3" type="audio/mpeg">
-    </audio>
+
 
     <!-- Preloader -->
     <div class="preLoader">
@@ -77,7 +75,7 @@
                                         <!-- Header-menu -->
                                         <div class="header-menu dosis">
                                             <ul>
-                                                <li><a href="home.html">Home <img src="assets/img/line2.png" alt=""></a>
+                                                <li><a href="index.html">Home <img src="assets/img/line2.png" alt=""></a>
 
                                                 </li>
                                                 <li><a href="about.html">About <img src="assets/img/line2.png"
@@ -445,42 +443,6 @@
         <a href="#"><i class="fa fa-chevron-up"></i></a>
     </div>
     <!-- back to top -->
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const audio = document.getElementById("background-audio");
-            const constantVolume = 0.1;
-            let isMouseMoving = false;
-            let volumeTimeout;
-
-            // Function to set the volume to the maximum level
-            function setMaxVolume() {
-                audio.volume = 1.0;
-            }
-
-            // Function to set the volume back to the constant level
-            function setConstantVolume() {
-                audio.volume = constantVolume;
-            }
-
-            // Update the audio volume when the mouse moves
-            document.addEventListener("mousemove", function () {
-                if (!isMouseMoving) {
-                    isMouseMoving = true;
-                    setMaxVolume();
-                }
-
-                clearTimeout(volumeTimeout);
-                volumeTimeout = setTimeout(function () {
-                    isMouseMoving = false;
-                    setConstantVolume();
-                }, 1000); // Adjust the delay in milliseconds as needed
-            });
-
-            // Set the initial volume to the constant level
-            audio.volume = constantVolume;
-        });
-    </script>
 
 
     <!-- JS Files -->
